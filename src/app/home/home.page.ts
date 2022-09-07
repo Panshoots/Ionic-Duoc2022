@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,12 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  
   constructor() {
   }
 
+  // METODO PARA CAMBIAR A MODO OSCURO
   changed(e) {
-    console.log(e.detail.checked)
-    document.body.classList.toggle('dark',e.detail.checked);
+    //console.log(e.detail.checked)
+    document.body.classList.toggle('dark', e.detail.checked);
   }
+
+  
 }

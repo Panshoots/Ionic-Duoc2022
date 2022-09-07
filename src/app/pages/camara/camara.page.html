@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>camara</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="full" (click)="openCamera()">
+    <ion-icon slot="start" name="camera"></ion-icon>
+    <ion-label>Escanear</ion-label>
+  </ion-button>
+
+  <ion-button expand="full" (click)="resetCamera()" *ngIf="scanerResultado">
+    <ion-icon slot="start" name="refresh"></ion-icon>
+    <ion-label>Cerrar</ion-label>
+  </ion-button>
+
+  <video #video [hidden]="!scanerActivo" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+
+  <ion-button expand="full" (click)="closeCamera()" *ngIf="scanerActivo">
+    <ion-icon slot="start" name="refresh"></ion-icon>
+    <ion-label>Cerrar</ion-label>
+  </ion-button>
+
+  <ion-card *ngIf="scanerResultado">
+    <ion-card-header>
+      <ion-card-title>QR CODE</ion-card-title>
+      <ion-card-content>
+        {{ scanerResultado }}
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

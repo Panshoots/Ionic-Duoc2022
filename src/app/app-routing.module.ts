@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'splashscreen',
     loadChildren: () => import('./pages/splashscreen/splashscreen.module').then( m => m.SplashscreenPageModule)
+  },  {
+    path: 'camara',
+    loadChildren: () => import('./pages/camara/camara.module').then( m => m.CamaraPageModule)
   },
+
 ];
 
 @NgModule({
